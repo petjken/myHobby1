@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Tutor Calculator";
+}
+
+
+@{
+    ViewData["Title"] = "Tutor Calculator";
+}
+
+<div class="container mt-5">
+    <h2>Guitar Tutoring Calculator</h2>
+    <p>Ready to level up your playing? Use the calculator below to see the cost of a private session.</p>
+
+    <div class="row">
+        <div class="col-md-4">
+            <form id="tutorForm">
+                <div class="mb-3">
+                    <label for="hours" class="form-label">Number of Hours:</label>
+                    <input type="number" id="hours" class="form-control" min="1" placeholder="Enter hours (e.g. 2)" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Rate per Hour ($):</label>
+                    <input type="text" id="rate" class="form-control" value="75" readonly>
+                </div>
+
+                <button type="button" id="btnCalculate" class="btn btn-primary">Calculate Total</button>
+
+                <div class="mt-4">
+                    <label class="form-label font-weight-bold">Estimated Total:</label>
+                    <input type="text" id="totalOutput" class="form-control-plaintext fs-4 text-success" readonly placeholder="$0.00">
+                </div>
+            </form>
+
+            <hr />
+            <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary">Back to Home</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/calculator.js"></script>
+}
